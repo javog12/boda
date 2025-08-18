@@ -183,102 +183,58 @@ h1, h2, h3 {
     -webkit-filter: grayscale(100%);
 }
 
-.timeline {
-    position: relative;
-    padding: 1rem 0;
-}
+/* ===== NUEVOS ESTILOS PARA EL ITINERARIO ===== */
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    height: 100%;
-    width: 1px;
-    background-color: #C5BCAD;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.timeline-event {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding-top: 110px; /* Espacio para que el icono se posicione arriba */
-}
-
-.timeline-event:last-child {
-    margin-bottom: 0;
-}
-
-.timeline-time {
-    width: 50%;
-    text-align: right;
-    padding-right: 2.5rem;
-}
-
-.timeline-time p {
+.itinerary-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 3.5rem;
+    color: #F5F9E6;
+    margin-bottom: 3rem;
+    text-align: center;
 }
 
-.timeline-description {
-    width: 50%;
-    text-align: left; /* Alineación a la izquierda */
-    padding-left: 2.5rem;
+.itinerary-list {
+    max-width: 400px;
+    margin: 0 auto;
 }
 
-.timeline-description p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.25rem;
-}
-
-.timeline-icon {
-    /* Posicionamiento del icono */
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2; /* Para que esté por encima de la línea vertical */
-
-    /* Estilos del círculo y emoji */
+.itinerary-item {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    font-size: 2.5rem;
+    gap: 1.5rem; /* Espacio entre el icono y el texto */
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(197, 188, 173, 0.2);
 }
 
-.itinerary-dark-container .timeline-time p { color: #FFFFFF; }
-.itinerary-dark-container .timeline-description p { color: #F5F9E6; }
-.itinerary-dark-container .timeline-icon {
-    background-color: #4B4B34; /* El color de fondo del contenedor para "cortar" la línea */
-    border: 3px solid #F5F9E6;
-    color: #FFFFFF;
+.itinerary-item:last-child {
+    border-bottom: none;
 }
 
-.timeline-time p, .timeline-description p { color: #4B4B34; }
-
-
-@media (max-width: 640px) {
-    .timeline-event {
-        padding-top: 90px;
-    }
-    .timeline-time { padding-right: 1.5rem; }
-    .timeline-time p { font-size: 1.5rem; }
-    .timeline-description { padding-left: 1.5rem; }
-    .timeline-description p { font-size: 1rem; }
-    .timeline-icon { 
-        width: 64px; 
-        height: 64px; 
-        font-size: 2rem; 
-        border-width: 2px;
-    }
+.itinerary-icon {
+    font-size: 2rem;
+    color: #F5F9E6;
 }
+
+.itinerary-details {
+    text-align: left;
+}
+
+.itinerary-description {
+    color: #C5BCAD;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
+}
+
+.itinerary-time {
+    font-family: 'Playfair Display', serif;
+    color: #F5F9E6;
+    font-size: 2.25rem;
+    line-height: 1;
+}
+
 
 /* Form Styles */
 .form-container input[type="text"],
@@ -312,4 +268,72 @@ h1, h2, h3 {
 }
 #invitacion-personal h2 {
     font-family: 'Playfair Display', serif;
+}
+
+/* =============================================================== */
+/* === ESTILOS PARA EL SLIDER DE GALERÍA (SWIPER.JS)         === */
+/* =============================================================== */
+
+#galeria .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+#galeria .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #E6E7E8; /* Usamos un fondo similar al de secciones cercanas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem; /* Pequeño padding para que la sombra no se corte */
+    border-radius: 1rem; /* Redondeo consistente */
+}
+
+#galeria .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.75rem; /* Redondeo interno de la imagen */
+}
+
+/* Estilos para los botones de navegación */
+#galeria .swiper-button-next,
+#galeria .swiper-button-prev {
+    color: #4B4B34; /* Color principal oscuro */
+    background-color: rgba(245, 249, 230, 0.8); /* Fondo del color base de la página */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#galeria .swiper-button-next:hover,
+#galeria .swiper-button-prev:hover {
+    background-color: #4B4B34;
+    color: #F5F9E6;
+}
+
+#galeria .swiper-button-next::after,
+#galeria .swiper-button-prev::after {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Estilos para la paginación */
+#galeria .swiper-pagination-bullet {
+    background-color: #C5BCAD; /* Color beige de la paleta */
+    opacity: 0.7;
+    width: 10px;
+    height: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#galeria .swiper-pagination-bullet-active {
+    background-color: #6C6E4A; /* Color verde medio */
+    opacity: 1;
+    transform: scale(1.2);
 }
