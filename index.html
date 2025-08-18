@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompáñanos a celebrar nuestra boda. Encuentra todos los detalles sobre la ceremonia, recepción, nuestra historia y confirma tu asistencia.">
+    <title>¡Nuestra Boda! J & N</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/leaves.css">
+    <link rel="stylesheet" href="css/rama.css">
+    <link rel="stylesheet" href="css/form.css">
+
+    <link rel="preload" href="images/hero-background.jpg" as="image">
+</head>
+
+<body class="bg-[#F5F9E6] text-[#4B4B34] font-montserrat"> 
+
+    <div class="fixed top-0 left-0 w-full bg-[#F5F9E6] z-20 h-2 shadow-md"></div>
+
+
+    <main>
+
+<header class="hero-background h-[60vh] flex items-start justify-center text-center relative mb-20">
+        <div class="hero-overlay absolute inset-0"></div>
+
+        <div class="relative z-10 p-6 max-w-5xl mx-auto text-center flex flex-col items-center pt-16 md:pt-20">
+
+            <h1 class="text-6xl md:text-7xl font-marck-script text-[#F5F9E6] drop-shadow-lg mb-6">Javier & Nairobi</h1>
+
+            <div class="font-playfair-display text-white/95 drop-shadow-md tracking-wider text-center" style="font-size: 1.1em; font-style: italic;">
+                <p class="text-base md:text-lg">Nuestro amor, un regalo de Dios, se convierte hoy en un pacto eterno, un solo corazón y una sola alma, para amarnos y honrarnos por siempre.</p>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="wedding-crest" class="relative">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-cover bg-center rounded-full border-8 border-[#F5F9E6] shadow-xl" 
+             style="background-image: linear-gradient(rgba(108, 110, 74, 0.35), rgba(108, 110, 74, 0.35)), url('images/logo.jpg');">
+        </div>
+    </div>
+    
+    <section class="bg-transparent pt-20 pb-20">
+        <div class="container mx-auto px-4 flex justify-center items-center">
+            <div id="invitacion-personal" style="visibility: hidden;" class="max-w-2xl w-full text-center">
+            
+                <p class="text-xl text-[#4B4B34]/80 tracking-widest uppercase mb-4">
+                    Tenemos el honor de invitar a
+                </p>
+        
+                <h2 class="text-6xl md:text-8xl text-[#6C6E4A] my-3 leading-tight">
+                    <span id="guest-names">Invitado</span>
+                </h2>
+        
+                <div class="w-24 h-px bg-[#C5BCAD] mx-auto my-10"></div>
+        
+                <div class="mt-4">
+                     <p class="text-xl text-[#4B4B34] mb-2">
+                        Pases confirmados:
+                    </p>
+                    <p class="text-6xl font-bold text-[#4B4B34]">
+                        <span id="guest-passes"></span>
+                    </p>
+                </div>
+        
+                <a href="#el-gran-dia" class="mt-12 inline-block bg-[#4B4B34] text-[#F5F9E6] px-10 py-3 rounded-full hover:bg-[#6C6E4A] transition duration-300 shadow-lg text-base font-bold tracking-widest uppercase">
+                    Ver Detalles de la Boda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="el-gran-dia" class="pt-20 md:pt-24 pb-10 section-divider">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-6xl mb-4">El Gran Día</h2>
+                
+                <div class="date-title text-center">
+                    <span class="block text-2xl md:text-3xl font-light tracking-widest uppercase">
+                        Sábado
+                    </span>
+                    <span class="block text-8xl md:text-9xl font-playfair-display font-bold leading-none my-2">
+                        25
+                    </span>
+                    <span class="block text-xl md:text-2xl font-light tracking-wider">
+                        de Octubre, 2025
+                    </span>
+                </div>
+            </div>
+    
+            <div class="event-container-wrapper">
+                <div class="event-container grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <div class="event-card bg-white/10 p-6 rounded-lg shadow-md flex flex-col items-center text-center backdrop-blur-sm">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-[#C5BCAD]/50">
+                            <img src="images/parroquia.JPG" alt="Foto de la Parroquia San Pablo" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="event-title text-3xl font-semibold mb-2">Ceremonia</h3>
+                        <p class="event-details mb-1">15:30 Horas</p>
+                        <p class="event-details mb-1"><strong>Parroquia San Pablo de la Cruz</strong></p>
+                        <p class="event-details mb-3">6to Anillo Beni #250</p>
+                        <a href="https://maps.app.goo.gl/YourCeremonyMapLink" target="_blank" class="event-map-button py-2 px-4 rounded-full transition duration-300 text-sm">
+                            CÓMO LLEGAR
+                        </a>
+                    </div>
+                
+                    <div class="event-card bg-white/10 p-6 rounded-lg shadow-md flex flex-col items-center text-center backdrop-blur-sm">
+                        <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-sm border-2 border-[#C5BCAD]/50">
+                            <img src="images/quinta.JPG" alt="Foto de la Casa Quinta Reynaga" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="event-title text-3xl font-semibold mb-2">Recepción</h3>
+                        <p class="event-details mb-1">18:00 Horas</p>
+                        <p class="event-details mb-1"><strong>Casa Quinta Reynaga</strong></p>
+                        <p class="event-details mb-3">Carretera a La Guardia Km 9</p>
+                        <a href="https://maps.app.goo.gl/YourReceptionMapLink" target="_blank" class="event-map-button py-2 px-4 rounded-full transition duration-300 text-sm">
+                            CÓMO LLEGAR
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="historia" class="pt-10 md:pt-12 pb-20 md:pb-24 bg-[#E6E7E8]">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-xl w-full bg-[#4B4B34] p-3 md:p-5 rounded-sm shadow-2xl inline-block">
+                <div class="border-2 border-white/90">
+                    <img 
+                        src="images/0V5A0860-min.jpg" 
+                        alt="Nuestra Historia - Javier y Nairobi" 
+                        class="block w-full h-auto grayscale-photo"
+                    >
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <section id="itinerario-celebracion" class="py-20 md:py-24 bg-[#F5F9E6] section-divider">
+        <div class="container mx-auto px-4">
+            <div class="bg-[#4B4B34] p-8 md:p-12 rounded-2xl shadow-xl itinerary-dark-container">
+                <div class="text-center">
+                    <h2 class="text-6xl text-white mb-24">Itinerario de la Celebración</h2>
+                    <div class="timeline max-w-md mx-auto">
+
+                        <div class="timeline-event">
+                            <span class="timeline-icon" role="img" aria-label="Icono de cámara de fotos">📸</span>
+                            <div class="timeline-time"><p>19:00</p></div>
+                            <div class="timeline-description"><p>Fotos de los Novios</p></div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <span class="timeline-icon" role="img" aria-label="Icono de copas brindando">🥂</span>
+                            <div class="timeline-time"><p>20:00</p></div>
+                            <div class="timeline-description"><p>Brindis</p></div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <span class="timeline-icon" role="img" aria-label="Icono de plato y cubiertos">🍽️</span>
+                            <div class="timeline-time"><p>20:30</p></div>
+                            <div class="timeline-description"><p>Cena</p></div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <span class="timeline-icon" role="img" aria-label="Icono de mujer bailando">💃</span>
+                            <div class="timeline-time"><p>22:00</p></div>
+                            <div class="timeline-description"><p>Primer Baile</p></div>
+                        </div>
+
+                        <div class="timeline-event">
+                            <span class="timeline-icon" role="img" aria-label="Icono de fiesta">🎉</span>
+                            <div class="timeline-time"><p>23:00</p></div>
+                            <div class="timeline-description"><p>¡A Celebrar!</p></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-16 bg-white section-divider">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-6xl text-center text-[#6C6E4A] mb-4">Nuestra Galería</h2>
+            <div class="w-24 h-px bg-[#9A9282]/50 mx-auto mb-12"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-2 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200/80">
+                    <img src="images/0V5A0010.jpg" alt="Wedding Photo 1" class="w-full h-auto object-cover rounded-md" loading="lazy" decoding="async">
+                </div>
+                <div class="bg-white p-2 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200/80">
+                    <img src="images/0V5A0105.jpg" alt="Wedding Photo 2" class="w-full h-auto object-cover rounded-md" loading="lazy" decoding="async">
+                </div>
+                <div class="bg-white p-2 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200/80">
+                    <img src="images/0V5A0385.jpg" alt="Wedding Photo 3" class="w-full h-auto object-cover rounded-md" loading="lazy" decoding="async">
+                </div>
+                <div class="bg-white p-2 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200/80">
+                    <img src="images/0V5A0442.jpg" alt="Wedding Photo 4" class="w-full h-auto object-cover rounded-md" loading="lazy" decoding="async">
+                </div>
+                <div class="bg-white p-2 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200/80">
+                    <img src="images/0V5A9961.jpg" alt="Wedding Photo 5" class="w-full h-auto object-cover rounded-md" loading="lazy" decoding="async">
+                </div>
+                <div class="bg-white p-2 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 border border-gray-200/80">
+                    <img src="images/0V5A0849.jpg" alt="Wedding Photo 6" class="w-full h-auto object-cover rounded-md" loading="lazy" decoding="async">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="regalos" class="py-20 md:py-24 bg-[#E6E7E8] section-divider">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg text-center">
+                <h2 class="text-6xl text-center text-[#6C6E4A] mb-4">Mesa de Regalos</h2>
+                <div class="w-24 h-px bg-[#9A9282]/50 mx-auto mb-12"></div>
+                <p class="text-xl md:text-2xl leading-relaxed text-[#4B4B34] mb-8">
+                    Su presencia es nuestro mayor regalo, pero si desean tener un detalle con nosotros, hemos preparado una lista de regalos en Multicenter.
+                </p>
+                <div class="max-w-sm mx-auto mb-10">
+                    <img src="images/Logo de multicenter .jpg" alt="Logo de Multicenter" class="rounded-lg shadow-md" loading="lazy" decoding="async">
+                </div>
+                <p class="text-lg text-[#4B4B34] mb-10">
+                    Pueden ver el catálogo o contactar directamente al call center para coordinar la compra.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 uppercase tracking-widest">
+                    <a href="regalos.pdf" target="_blank" class="inline-block bg-[#6C6E4A] text-white px-8 py-3 rounded-full hover:bg-[#5a5c3e] transition duration-300 shadow-md text-base font-medium w-full sm:w-auto">
+                        Ver Catálogo (PDF)
+                    </a>
+                    <a href="https://wa.me/59169000200?text=Hola,%20quisiera%20consultar%20sobre%20la%20lista%20de%20regalos%20para%20la%20boda%20de%20Javier%20y%20Nairobi." target="_blank" class="inline-block bg-white text-[#6C6E4A] px-8 py-3 rounded-full hover:bg-[#6C6E4A]/10 transition duration-300 shadow-md text-base font-medium border border-[#6C6E4A]/30 w-full sm:w-auto">
+                        Solicitar Regalo por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="py-20 md:py-24 bg-[#F5F9E6] section-divider">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-6xl text-center text-[#6C6E4A] mb-4">Confirma tu Asistencia</h2>
+            <div class="w-24 h-px bg-[#9A9282]/50 mx-auto mb-10"></div>
+            <div class="form-wrapper">
+                <div class="form-container">
+                    <div class="form-header">
+                        <p>Nos haría muy felices que nos acompañes.<br>Por favor, confirma antes del <span class="font-semibold">25 de septiembre de 2025</span>.</p>
+                    </div>
+                    <div class="kids-notice my-8 p-6 bg-[#fdfdfa] rounded-xl shadow-md border border-[#C5BCAD]/70 text-[#4B4B34]">
+                        <div class="flex justify-center items-center gap-3 mb-3">
+                            <p class="intro-text text-2xl text-[#6C6E4A]">Recuerda que:</p>
+                        </div>
+                        <p class="main-text text-base leading-relaxed">Aunque apreciamos enormemente a sus pequeños, hemos decidido que nuestra boda sea un evento solo para adultos.</p>
+                        <hr class="separator w-24 mx-auto my-4 border-t border-[#C5BCAD]">
+                        <p class="main-text text-base leading-relaxed">Esperamos que esta decisión les permita disfrutar de una noche especial con nosotros.<br>¡Agradecemos su comprensión!</p>
+                    </div>
+                    <form id="rsvp-form">
+                        <div class="form-group">
+                            <label for="name">Nombre(s) y Apellido(s):</label>
+                            <input type="text" id="name" name="NombreCompleto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="attendance">¿Podrás acompañarnos?</label>
+                            <select id="attendance" name="Asistencia" required>
+                                <option value="" disabled selected>Por favor, selecciona una opción...</option>
+                                <option value="Si, asistire">¡Sí, con mucho gusto asistiré!</option>
+                                <option value="No podre asistir">Lamentablemente, no podré asistir</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Déjanos un mensaje o una canción:</label>
+                            <textarea id="message" name="MensajeCancion" rows="4" placeholder="(Opcional)"></textarea>
+                        </div>
+                        <button type="submit">Enviar Confirmación</button>
+                    </form>
+                    <p id="form-status"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dress-code" class="py-20 md:py-24 bg-[#E6E7E8]">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-lg text-center">
+                <h2 class="text-6xl text-center text-[#6C6E4A] mb-4">Código de Vestimenta</h2>
+                <div class="w-24 h-px bg-[#9A9282]/50 mx-auto mb-12"></div>
+                <p class="text-xl md:text-2xl leading-relaxed text-[#4B4B34] mb-4">
+                    La etiqueta para nuestra boda es <strong class="font-semibold">Formal</strong>.
+                </p>
+                <div class="max-w-2xl mx-auto text-center mt-8 p-4 border border-dashed border-[#C5BCAD] rounded-lg bg-[#F5F9E6]/50">
+                    <p class="text-lg text-[#4B4B34]">
+                        Con cariño, les pedimos reservar el color <strong class="font-semibold">blanco para la novia</strong> y los tonos <strong class="font-semibold">verdes para el novio</strong>. ¡Gracias!
+                    </p>
+                </div>
+                <p class="text-lg text-[#4B4B34] mt-8 mb-12 max-w-2xl mx-auto">
+                    Para que te sirva de guía, aquí te sugerimos una paleta de colores. ¡Siéntete libre de elegir el que más te guste!
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8">
+                    <div class="text-center">
+                        <h3 class="text-4xl text-[#6C6E4A] mb-4">Para Ellas</h3>
+                        <p class="text-base text-[#4B4B34] mb-6">Se sugieren tonos pasteles y vibrantes</p>
+                        <div class="flex flex-wrap justify-center gap-x-6 gap-y-6 mt-8">
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-red-300 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Rojo</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-sky-300 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Azul</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Negro</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-emerald-300 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Verde</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-amber-200 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Beige</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-pink-300 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Rosado</span></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-4xl text-[#6C6E4A] mb-4">Para Ellos</h3>
+                        <p class="text-base text-[#4B4B34] mb-6">Se sugieren tonos clásicos y sobrios</p>
+                        <div class="flex flex-wrap justify-center gap-x-6 gap-y-6 mt-8">
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-gray-800 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Negro</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-blue-900 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Azul Marino</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-slate-700 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Azul Oscuro</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-stone-400 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Beige</span></div>
+                            <div class="flex flex-col items-center w-20"><div class="w-16 h-16 rounded-full bg-slate-500 border-2 border-white shadow-md"></div><span class="mt-2 text-sm text-[#4B4B34]">Plomo</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="bg-[#F5F9E6] py-20 text-center">
+        <div class="container mx-auto px-4">
+            <h3 class="font-marck-script text-7xl md:text-9xl text-[#4B4B34] font-bold mb-4">
+                Javier & Nairobi
+            </h3>
+            <p class="italic text-xl md:text-2xl text-[#6C6E4A] mb-12">
+                los esperan con mucho cariño
+            </p>
+            <div class="w-24 h-px bg-[#9A9282]/50 mx-auto mb-8"></div>
+            <p class="text-xs text-black opacity-60">
+                © 2025 Vertex Creations.
+            </p>
+        </div>
+    </footer>
+
+    </main>
+
+    <script src="js/countdown.js" defer></script>
+    <script src="js/leaves.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/guests.js" defer></script>
+    <script src="js/personalize.js" defer></script>
+    <script src="js/form-whatsapp.js" defer></script>
+
+</body>
+</html>

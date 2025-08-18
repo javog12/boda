@@ -1,0 +1,315 @@
+/* Base Styles for the entire body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; 
+    line-height: 1.8; 
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Styles for all heading elements */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Custom font classes */
+.font-marck-script {
+    font-family: 'Great Vibes', cursive;
+}
+.font-cormorant-garamond {
+    font-family: 'Cormorant Garamond', serif;
+}
+.font-playfair-display {
+    font-family: 'Playfair Display', serif;
+}
+
+.tracking-widest {
+    letter-spacing: 0.15em !important;
+}
+
+/* Hero Section Styles */
+.hero-background {
+    transform: translateZ(0);
+}
+
+.hero-overlay {
+    position: fixed;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/0V5A0847-min.jpg');
+    background-size: cover;
+    background-position: 50% 80%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Falling Leaves Animation Styles */
+.leaf {
+    position: fixed;
+    top: -50px;
+    width: var(--leaf-width);
+    height: var(--leaf-height);
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 999;
+    clip-path: polygon(50% 0%, 100% 30%, 80% 100%, 20% 100%, 0% 30%);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+@keyframes fall {
+    0% { top: -50px; transform: rotate(var(--initial-rotation, 0deg)); opacity: 0.8; }
+    80% { top: 100vh; opacity: 0.8; }
+    100% { top: calc(100vh + 50px); transform: rotate(calc(var(--initial-rotation, 0deg) + 720deg)); opacity: 0; }
+}
+
+@keyframes sway {
+    0% { transform: translateX(0px); }
+    25% { transform: translateX(var(--sway-distance, 20px)); }
+    50% { transform: translateX(0px); }
+    75% { transform: translateX(calc(var(--sway-distance, 20px) * -1)); }
+    100% { transform: translateX(0px); }
+}
+
+/* Section Dividers */
+.section-divider::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 80%;
+    max-width: 250px;
+    margin: 2rem auto; /* <-- VALOR AJUSTADO */
+    background: linear-gradient(to right, transparent, #C5BCAD, transparent);
+    opacity: 0.6;
+}
+
+/* =============================================================== */
+/* === NUEVOS ESTILOS PARA "EL GRAN DÍA" (PALETA ORIGINAL)   === */
+/* =============================================================== */
+
+#el-gran-dia {
+    background-color: #4B4B34; /* Color principal oscuro de la paleta */
+    background-image: url('../images/image_702ebf.png'); /* <-- ¡REVISA ESTA RUTA! */
+    background-size: 300px;
+    background-repeat: repeat;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+#el-gran-dia::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(75, 75, 52, 0.85); /* Color base #4B4B34 con opacidad */
+    z-index: 1;
+}
+
+#el-gran-dia .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ajuste de colores del texto sobre el fondo oscuro */
+#el-gran-dia h2 {
+    color: #F5F9E6; /* Crema claro */
+}
+#el-gran-dia .date-title span {
+    color: #C5BCAD; /* Beige para texto secundario */
+}
+#el-gran-dia .date-title .font-bold {
+    color: #F5F9E6; /* Crema claro para el número */
+    text-shadow: 0px 2px 15px rgba(245, 249, 230, 0.3);
+}
+
+.event-container-wrapper {
+    width: 100%;
+}
+
+.event-container {
+    max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .event-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.event-card {
+    /* Fondo semi-transparente del verde medio de la paleta */
+    background-color: rgba(108, 110, 74, 0.25);
+    border: 1px solid rgba(197, 188, 173, 0.3); /* Borde con el beige de la paleta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(197, 188, 173, 0.5);
+    background-color: rgba(108, 110, 74, 0.4);
+}
+
+.event-card .event-title {
+    color: #F5F9E6;
+}
+
+.event-card .event-details {
+    font-family: 'Montserrat', sans-serif;
+    color: #C5BCAD;
+}
+
+.event-map-button {
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1rem;
+    background-color: #F5F9E6;
+    color: #4B4B34;
+}
+.event-map-button:hover {
+    background-color: #C5BCAD;
+}
+
+/* =============================================================== */
+/* === OTROS ESTILOS DE LA PÁGINA (ITINERARIO, HISTORIA, ETC) === */
+/* =============================================================== */
+
+.grayscale-photo {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.timeline {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 1px;
+    background-color: #C5BCAD;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.timeline-event {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-top: 110px; /* Espacio para que el icono se posicione arriba */
+}
+
+.timeline-event:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-time {
+    width: 50%;
+    text-align: right;
+    padding-right: 2.5rem;
+}
+
+.timeline-time p {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.timeline-description {
+    width: 50%;
+    text-align: left; /* Alineación a la izquierda */
+    padding-left: 2.5rem;
+}
+
+.timeline-description p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+}
+
+.timeline-icon {
+    /* Posicionamiento del icono */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Para que esté por encima de la línea vertical */
+
+    /* Estilos del círculo y emoji */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 2.5rem;
+}
+
+.itinerary-dark-container .timeline-time p { color: #FFFFFF; }
+.itinerary-dark-container .timeline-description p { color: #F5F9E6; }
+.itinerary-dark-container .timeline-icon {
+    background-color: #4B4B34; /* El color de fondo del contenedor para "cortar" la línea */
+    border: 3px solid #F5F9E6;
+    color: #FFFFFF;
+}
+
+.timeline-time p, .timeline-description p { color: #4B4B34; }
+
+
+@media (max-width: 640px) {
+    .timeline-event {
+        padding-top: 90px;
+    }
+    .timeline-time { padding-right: 1.5rem; }
+    .timeline-time p { font-size: 1.5rem; }
+    .timeline-description { padding-left: 1.5rem; }
+    .timeline-description p { font-size: 1rem; }
+    .timeline-icon { 
+        width: 64px; 
+        height: 64px; 
+        font-size: 2rem; 
+        border-width: 2px;
+    }
+}
+
+/* Form Styles */
+.form-container input[type="text"],
+.form-container select,
+.form-container textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.125rem;
+    background-color: #FFFFFF;
+    border: 1px solid #C5BCAD;
+    border-radius: 8px;
+    color: #4B4B34;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #6C6E4A;
+    box-shadow: 0 0 0 3px rgba(108, 110, 74, 0.2);
+}
+
+.kids-notice .intro-text {
+    font-family: 'Playfair Display', serif;
+}
+
+#invitacion-personal p, #invitacion-personal a {
+    font-family: 'Montserrat', sans-serif;
+}
+#invitacion-personal h2 {
+    font-family: 'Playfair Display', serif;
+}
