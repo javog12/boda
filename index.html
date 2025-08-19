@@ -439,6 +439,15 @@
         const rsvpWrapper = document.getElementById('rsvp-interactive');
 
         document.getElementById('confirm-yes').addEventListener('click', () => {
+            // Obtenemos el nombre del invitado de la sección de bienvenida
+            const guestName = document.getElementById('guest-names').innerText;
+            const nameInput = document.getElementById('name');
+            
+            // Si el nombre es válido (no es el texto por defecto), lo ponemos en el campo del formulario
+            if (nameInput && guestName && guestName !== 'Invitado') {
+                nameInput.value = guestName;
+            }
+
             step1.classList.remove('active');
             step2.classList.add('active');
         });
@@ -450,8 +459,17 @@
         const form = document.getElementById('rsvp-form');
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            const name = document.getElementById('name').value || 'Invitado';
-            rsvpWrapper.innerHTML = `<div class="final-reply"><p>¡Gracias por confirmar, ${name}! Tu asistencia ha sido registrada. ¡Nos vemos en la boda!</p></div>`;
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const phoneNumber = '59169197397'; // Número de WhatsApp para recibir la confirmación
+            let confirmationMessage = `¡Hola! 👋 Confirmo mi asistencia a su boda.\n\n*Invitado(s):* ${name}`;
+            if (message.trim() !== '') {
+                confirmationMessage += `\n\n*Mensaje/Canción:* ${message}`;
+            }
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(confirmationMessage)}`;
+            
+            rsvpWrapper.innerHTML = `<div class="final-reply"><p>¡Gracias por confirmar, ${name}! Serás redirigido a WhatsApp para enviar el mensaje. ¡Nos vemos en la boda!</p></div>`;
+            window.open(whatsappURL, '_blank');
         });
 
         // --- Script para el contador del footer ---
