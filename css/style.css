@@ -46,33 +46,6 @@ h1, h2, h3 {
     height: 100%;
 }
 
-/* Falling Leaves Animation Styles */
-.leaf {
-    position: fixed;
-    top: -50px;
-    width: var(--leaf-width);
-    height: var(--leaf-height);
-    opacity: 0.8;
-    pointer-events: none;
-    z-index: 999;
-    clip-path: polygon(50% 0%, 100% 30%, 80% 100%, 20% 100%, 0% 30%);
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-}
-
-@keyframes fall {
-    0% { top: -50px; transform: rotate(var(--initial-rotation, 0deg)); opacity: 0.8; }
-    80% { top: 100vh; opacity: 0.8; }
-    100% { top: calc(100vh + 50px); transform: rotate(calc(var(--initial-rotation, 0deg) + 720deg)); opacity: 0; }
-}
-
-@keyframes sway {
-    0% { transform: translateX(0px); }
-    25% { transform: translateX(var(--sway-distance, 20px)); }
-    50% { transform: translateX(0px); }
-    75% { transform: translateX(calc(var(--sway-distance, 20px) * -1)); }
-    100% { transform: translateX(0px); }
-}
-
 /* Section Dividers */
 .section-divider::after {
     content: '';
@@ -80,18 +53,20 @@ h1, h2, h3 {
     height: 1px;
     width: 80%;
     max-width: 250px;
-    margin: 2rem auto; /* <-- VALOR AJUSTADO */
+    margin: 0 auto;
+    padding-top: 4rem;
     background: linear-gradient(to right, transparent, #C5BCAD, transparent);
     opacity: 0.6;
 }
 
+
 /* =============================================================== */
-/* === NUEVOS ESTILOS PARA "EL GRAN DÍA" (PALETA ORIGINAL)   === */
+/* === SECCIONES APROBADAS (SIN CAMBIOS)                     === */
 /* =============================================================== */
 
 #el-gran-dia {
-    background-color: #4B4B34; /* Color principal oscuro de la paleta */
-    background-image: url('../images/image_702ebf.png'); /* <-- ¡REVISA ESTA RUTA! */
+    background-color: #4B4B34;
+    background-image: url('../images/image_702ebf.png');
     background-size: 300px;
     background-repeat: repeat;
     padding-left: 1rem;
@@ -99,70 +74,31 @@ h1, h2, h3 {
     position: relative;
     overflow: hidden;
 }
-
 #el-gran-dia::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(75, 75, 52, 0.85); /* Color base #4B4B34 con opacidad */
+    background-color: rgba(75, 75, 52, 0.85);
     z-index: 1;
 }
-
-#el-gran-dia .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* Ajuste de colores del texto sobre el fondo oscuro */
-#el-gran-dia h2 {
-    color: #F5F9E6; /* Crema claro */
-}
-#el-gran-dia .date-title span {
-    color: #C5BCAD; /* Beige para texto secundario */
-}
+#el-gran-dia .container { position: relative; z-index: 2; }
+#el-gran-dia h2 { color: #F5F9E6; }
+#el-gran-dia .date-title span { color: #C5BCAD; }
 #el-gran-dia .date-title .font-bold {
-    color: #F5F9E6; /* Crema claro para el número */
+    color: #F5F9E6;
     text-shadow: 0px 2px 15px rgba(245, 249, 230, 0.3);
 }
-
-.event-container-wrapper {
-    width: 100%;
-}
-
-.event-container {
-    max-width: 100%;
-}
-
-@media (min-width: 1024px) {
-    .event-container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-}
-
 .event-card {
-    /* Fondo semi-transparente del verde medio de la paleta */
     background-color: rgba(108, 110, 74, 0.25);
-    border: 1px solid rgba(197, 188, 173, 0.3); /* Borde con el beige de la paleta */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(197, 188, 173, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .event-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    border-color: rgba(197, 188, 173, 0.5);
-    background-color: rgba(108, 110, 74, 0.4);
 }
-
-.event-card .event-title {
-    color: #F5F9E6;
-}
-
-.event-card .event-details {
-    font-family: 'Montserrat', sans-serif;
-    color: #C5BCAD;
-}
-
+.event-card .event-title { color: #F5F9E6; }
+.event-card .event-details { font-family: 'Montserrat', sans-serif; color: #C5BCAD; }
 .event-map-button {
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
@@ -170,170 +106,527 @@ h1, h2, h3 {
     background-color: #F5F9E6;
     color: #4B4B34;
 }
-.event-map-button:hover {
-    background-color: #C5BCAD;
-}
+.event-map-button:hover { background-color: #C5BCAD; }
+.grayscale-photo { filter: grayscale(100%); -webkit-filter: grayscale(100%); }
 
 /* =============================================================== */
-/* === OTROS ESTILOS DE LA PÁGINA (ITINERARIO, HISTORIA, ETC) === */
+/* === UX REDESIGN: MESA DE REGALOS (MINIMALISTA ROMÁNTICO)  === */
 /* =============================================================== */
-
-.grayscale-photo {
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
+#regalos {
+    background-color: #4B4B34;
+    background-image: url('../images/image_702ebf.png');
+    background-size: 300px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* ===== NUEVOS ESTILOS PARA EL ITINERARIO ===== */
-
-.itinerary-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #F5F9E6;
-    margin-bottom: 3rem;
-    text-align: center;
+#regalos::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(75, 75, 52, 0.85);
+    z-index: 1;
 }
 
-.itinerary-list {
-    max-width: 400px;
-    margin: 0 auto;
+#regalos .container {
+    position: relative;
+    z-index: 2;
 }
 
-.itinerary-item {
+#regalos .gift-links {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1.5rem; /* Espacio entre el icono y el texto */
-    padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(197, 188, 173, 0.2);
+    gap: 1.5rem;
 }
 
-.itinerary-item:last-child {
-    border-bottom: none;
-}
-
-.itinerary-icon {
-    font-size: 2rem;
+#regalos .gift-link {
+    display: inline-flex;
+    align-items: center;
     color: #F5F9E6;
-}
-
-.itinerary-details {
-    text-align: left;
-}
-
-.itinerary-description {
-    color: #C5BCAD;
+    border: 1px solid rgba(197, 188, 173, 0.5);
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.25rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
-.itinerary-time {
-    font-family: 'Playfair Display', serif;
-    color: #F5F9E6;
-    font-size: 2.25rem;
-    line-height: 1;
+#regalos .gift-link:hover {
+    background-color: rgba(197, 188, 173, 0.1);
+    border-color: #C5BCAD;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 
-/* Form Styles */
-.form-container input[type="text"],
-.form-container select,
-.form-container textarea {
+/* =============================================================== */
+/* === UX REDESIGN: CONFIRMA TU ASISTENCIA (RSVP)            === */
+/* =============================================================== */
+#rsvp {
+    background-color: #F5F9E6; 
+}
+#rsvp h2 { 
+    color: #6C6E4A;
+}
+#rsvp p { 
+    color: #4B4B34;
+}
+
+#rsvp-interactive {
+    min-height: 250px;
+    position: relative;
+}
+.rsvp-step {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
     width: 100%;
-    padding: 0.75rem 1rem;
+    transform: translateY(20px);
+}
+.rsvp-step.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    position: relative;
+}
+#rsvp-step-1 {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn-rsvp {
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 50px;
+    border: 2px solid #4B4B34;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+.btn-rsvp:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.btn-rsvp.yes {
+    background-color: #4B4B34;
+    color: #F5F9E6;
+}
+.btn-rsvp.yes:hover {
+    background-color: #6C6E4A;
+    border-color: #6C6E4A;
+}
+.btn-rsvp.no {
+    background-color: transparent;
+    color: #4B4B34;
+    border-color: #C5BCAD;
+}
+.btn-rsvp.no:hover {
+    background-color: #4B4B34;
+    color: #F5F9E6;
+    border-color: #4B4B34;
+}
+#rsvp-form {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+#rsvp-form .form-intro {
+    font-size: 1.2rem;
+    color: #4B4B34;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+}
+#rsvp-form .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+#rsvp-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #6C6E4A;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+#rsvp-form input, #rsvp-form textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
     background-color: #FFFFFF;
     border: 1px solid #C5BCAD;
-    border-radius: 8px;
     color: #4B4B34;
+    font-family: 'Montserrat', sans-serif;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
-.form-container input[type="text"]:focus,
-.form-container select:focus,
-.form-container textarea:focus {
+#rsvp-form input::placeholder, #rsvp-form textarea::placeholder {
+    color: #C5BCAD;
+}
+#rsvp-form input:focus, #rsvp-form textarea:focus {
     outline: none;
     border-color: #6C6E4A;
-    box-shadow: 0 0 0 3px rgba(108, 110, 74, 0.2);
+    box-shadow: 0 0 0 3px rgba(108, 110, 74, 0.15);
 }
-
-.kids-notice .intro-text {
-    font-family: 'Playfair Display', serif;
-}
-
-#invitacion-personal p, #invitacion-personal a {
-    font-family: 'Montserrat', sans-serif;
-}
-#invitacion-personal h2 {
-    font-family: 'Playfair Display', serif;
-}
-
-/* =============================================================== */
-/* === ESTILOS PARA EL SLIDER DE GALERÍA (SWIPER.JS)         === */
-/* =============================================================== */
-
-#galeria .swiper {
+.btn-submit {
     width: 100%;
-    height: 100%;
+    padding: 15px;
+    background-color: #4B4B34;
+    color: #F5F9E6;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-submit:hover { 
+    background-color: #6C6E4A; 
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-#galeria .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #E6E7E8; /* Usamos un fondo similar al de secciones cercanas */
+#rsvp .final-reply {
+    border: 1px solid #C5BCAD;
+    padding: 2.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #4B4B34;
+    background-color: rgba(197, 188, 173, 0.1);
+}
+#rsvp .final-reply p {
+    font-family: 'Playfair Display', serif;
+}
+
+.kids-notice-v2 {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0.5rem; /* Pequeño padding para que la sombra no se corte */
-    border-radius: 1rem; /* Redondeo consistente */
+    gap: 1.5rem;
+    text-align: left;
+    padding: 1.5rem;
+    background-color: #FFFFFF;
+    border: 1px solid #E0D9CD;
+    border-radius: 12px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 30px rgba(75, 75, 52, 0.07);
+}
+.kids-notice-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #6C6E4A;
+    color: #F5F9E6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.kids-notice-title {
+    font-family: 'Playfair Display', serif;
+    color: #6C6E4A;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+.kids-notice-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4B4B34;
+    margin: 0;
+    padding-top: 0.25rem;
 }
 
-#galeria .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.75rem; /* Redondeo interno de la imagen */
+/* =============================================================== */
+/* === UX REDESIGN: CELEBRACIÓN (CON LÍNEA DE TIEMPO)        === */
+/* =============================================================== */
+#itinerario-celebracion {
+    background-color: #E6E7E8; 
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
-
-/* Estilos para los botones de navegación */
-#galeria .swiper-button-next,
-#galeria .swiper-button-prev {
-    color: #4B4B34; /* Color principal oscuro */
-    background-color: rgba(245, 249, 230, 0.8); /* Fondo del color base de la página */
+#itinerario-celebracion .itinerary-title {
+    color: #4B4B34; 
+}
+.timeline-v2 {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.timeline-v2::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #C5BCAD;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+.timeline-item-v2 {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+.timeline-item-v2:nth-child(odd) {
+    left: 0;
+}
+.timeline-item-v2:nth-child(even) {
+    left: 50%;
+}
+.timeline-item-v2:nth-child(odd) .timeline-content-v2 {
+    text-align: right;
+}
+.timeline-item-v2:nth-child(even) .timeline-content-v2 {
+    text-align: left;
+}
+.timeline-icon-v2 {
+    position: absolute;
+    top: 18px;
+    z-index: 10;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    backdrop-filter: blur(5px);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #FFFFFF;
+    color: #6C6E4A;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D4D0C8;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.timeline-item-v2:nth-child(odd) .timeline-icon-v2 {
+    right: -25px;
+}
+.timeline-item-v2:nth-child(even) .timeline-icon-v2 {
+    left: -25px;
+}
+.timeline-content-v2 {
+    padding: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #D4D0C8;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.timeline-detail-v2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: #4B4B34;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.timeline-time-v2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #6C6E4A;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 768px) {
+    .timeline-v2::after {
+        left: 25px;
+    }
+    .timeline-item-v2 {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 15px;
+    }
+    .timeline-item-v2:nth-child(odd), .timeline-item-v2:nth-child(even) {
+        left: 0;
+    }
+    .timeline-item-v2:nth-child(odd) .timeline-content-v2, .timeline-item-v2:nth-child(even) .timeline-content-v2 {
+        text-align: left;
+    }
+    .timeline-icon-v2 {
+        left: 0;
+    }
+}
+
+
+/* =============================================================== */
+/* === UX REDESIGN: GALERÍA POLAROID (ACTUALIZADO)           === */
+/* =============================================================== */
+#galeria {
+    background-color: #4B4B34;
+    background-image: url('../images/image_702ebf.png');
+    background-size: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#galeria::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(75, 75, 52, 0.85);
+    z-index: 1;
+}
+
+#galeria .container {
+    position: relative;
+    z-index: 2;
+}
+
+#galeria h2 {
+    color: #F5F9E6;
+}
+
+#galeria p {
+    color: #C5BCAD;
+}
+
+#galeria .swiper {
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+#galeria .swiper-slide {
+    width: 360px; /* Aumentado de 280px para fotos más grandes */
+    height: auto;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+#galeria .swiper-slide:not(.swiper-slide-active) {
+    transform: scale(0.8);
+    opacity: 0.7;
+}
+
+.gallery-card {
+    background-color: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(197, 188, 173, 0.3);
+}
+.gallery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-image-wrapper {
+    width: 100%;
+    padding-top: 125%; /* Aspect ratio 4:5 */
+    position: relative;
+    background-color: #6C6E4A; /* Color de fondo mientras carga la imagen */
+}
+
+.gallery-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#galeria .swiper-button-next,
+#galeria .swiper-button-prev {
+    color: #F5F9E6;
 }
 
 #galeria .swiper-button-next:hover,
 #galeria .swiper-button-prev:hover {
-    background-color: #4B4B34;
-    color: #F5F9E6;
+    color: #C5BCAD;
 }
 
-#galeria .swiper-button-next::after,
-#galeria .swiper-button-prev::after {
+/* =============================================================== */
+/* === UX REDESIGN: CÓDIGO DE VESTIMENTA                     === */
+/* =============================================================== */
+#dress-code .dress-code-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: #C5BCAD;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+#dress-code .dress-code-note {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    padding: 1rem;
+    background-color: rgba(197, 188, 173, 0.2);
+    border-radius: 8px;
+}
+.dress-code-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background-color: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(197, 188, 173, 0.5);
+    box-shadow: 0 10px 30px rgba(75, 75, 52, 0.07);
+}
+@media (min-width: 768px) {
+    .dress-code-container { grid-template-columns: 1fr 1fr; }
+}
+.dress-code-column {
+    text-align: center;
+}
+.column-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.column-header i {
     font-size: 1.5rem;
-    font-weight: 700;
+    color: #6C6E4A;
+}
+.column-header h3 {
+    font-size: 2rem;
+    color: #6C6E4A;
+}
+.column-description {
+    color: #4B4B34;
+    margin-bottom: 1.5rem;
+}
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.color-swatch {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Estilos para la paginación */
-#galeria .swiper-pagination-bullet {
-    background-color: #C5BCAD; /* Color beige de la paleta */
-    opacity: 0.7;
-    width: 10px;
-    height: 10px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+/* =============================================================== */
+/* === UX REDESIGN: FOOTER                                   === */
+/* =============================================================== */
+.footer-v2 {
+    background-color: #4B4B34;
+    padding: 5rem 0;
+    position: relative;
+    background-image: url('../images/image_702ebf.png');
+    background-size: 300px;
 }
-
-#galeria .swiper-pagination-bullet-active {
-    background-color: #6C6E4A; /* Color verde medio */
-    opacity: 1;
-    transform: scale(1.2);
+.footer-v2::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(75, 75, 52, 0.95);
+}
+.footer-v2 .container {
+    position: relative;
+    z-index: 2;
 }
