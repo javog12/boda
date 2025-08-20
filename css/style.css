@@ -37,7 +37,8 @@ h1, h2, h3 {
 .hero-overlay {
     position: fixed;
     z-index: -1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/0V5A0847-min.jpg');
+    /* Velo de color verde olivo (#4B4B34) para unificar con la paleta de la web */
+    background-image: linear-gradient(rgba(75, 75, 52, 0.5), rgba(75, 75, 52, 0.5)), url('../images/portadaA.jpg');
     background-size: cover;
     background-position: 50% 80%;
     top: 0;
