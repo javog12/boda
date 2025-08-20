@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/leaves.css">
 
     <link rel="preload" href="images/hero-background.jpg" as="image">
+    <!-- Pre-cargamos la primera imagen de la galería para que se muestre al instante -->
+    <link rel="preload" href="images/0V5A0010.webp" as="image" type="image/webp">
 </head>
 
 <body class="bg-[#F5F9E6] text-[#4B4B34] font-montserrat"> 
@@ -263,67 +265,105 @@
         </div>
     </section>
 
-    <section id="galeria" class="pt-20 md:pt-24">
-        <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-6xl text-[#F5F9E6] mb-8">Nuestras Fotos</h2>
-                <div class="w-24 h-px bg-[#C5BCAD]/50 mx-auto mb-8"></div>
-                <p class="text-xl leading-relaxed text-[#C5BCAD] mb-12">
-                    Un pequeño vistazo de nuestra sesión de fotos, momentos que quedaran para siempre.
-                </p>
-            </div>
-    
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    
-                    <div class="swiper-slide">
-                        <div class="gallery-card">
-                            <div class="gallery-image-wrapper">
-                                <img src="images/0V5A0010.jpg" alt="Foto de Boda 1" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery-card">
-                            <div class="gallery-image-wrapper">
-                                <img src="images/0V5A0105.jpg" alt="Foto de Boda 2" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery-card">
-                            <div class="gallery-image-wrapper">
-                                <img src="images/0V5A0385.jpg" alt="Foto de Boda 3" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery-card">
-                            <div class="gallery-image-wrapper">
-                                 <img src="images/0V5A0442.jpg" alt="Foto de Boda 4" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery-card">
-                            <div class="gallery-image-wrapper">
-                                <img src="images/0V5A9961.jpg" alt="Foto de Boda 5" loading="lazy">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="gallery-card">
-                            <div class="gallery-image-wrapper">
-                                <img src="images/0V5A0849.jpg" alt="Foto de Boda 6" loading="lazy">
-                            </div>
+ <section id="galeria" class="pt-20 md:pt-24">
+    <div class="container mx-auto px-4 max-w-7xl">
+        <div class="text-center max-w-3xl mx-auto">
+            <h2 class="text-6xl text-[#F5F9E6] mb-8">Nuestras Fotos</h2>
+            <div class="w-24 h-px bg-[#C5BCAD]/50 mx-auto mb-8"></div>
+            <p class="text-xl leading-relaxed text-[#C5BCAD] mb-12">
+                Un pequeño vistazo de nuestra sesión de fotos, momentos que quedaran para siempre.
+            </p>
+        </div>
+
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A0010.webp" type="image/webp">
+                                <img src="images/0V5A0010.jpg" alt="Foto de Boda 1" width="1200" height="800">
+                            </picture>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A0105.webp" type="image/webp">
+                                <img src="images/0V5A0105.jpg" alt="Foto de Boda 2" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A0442.webp" type="image/webp">
+                                <img src="images/0V5A0442.jpg" alt="Foto de Boda 4" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A0646.webp" type="image/webp">
+                                <img src="images/0V5A0646.jpg" alt="Foto de Boda 5" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A0849.webp" type="image/webp">
+                                <img src="images/0V5A0849.jpg" alt="Foto de Boda 6" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A9811.webp" type="image/webp">
+                                <img src="images/0V5A9811.jpg" alt="Foto de Boda 7" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A9819.webp" type="image/webp">
+                                <img src="images/0V5A9819.jpg" alt="Foto de Boda 8" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="gallery-card">
+                        <div class="gallery-image-wrapper">
+                            <picture>
+                                <source srcset="images/0V5A9961.webp" type="image/webp">
+                                <img src="images/0V5A9961.jpg" alt="Foto de Boda 9" loading="lazy" width="1200" height="800">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section id="dress-code" class="py-20 md:py-24 bg-[#F5F9E6]">
         <div class="container mx-auto px-4 text-center max-w-4xl">
