@@ -1,10 +1,13 @@
 // --- Falling Petals Effect Logic ---
+
+// Generamos nuevos pétalos periódicamente para un efecto más denso
+// Aumentamos el intervalo para que caigan menos pétalos (antes 400ms).
 function createPetal() {
     const petal = document.createElement('div');
     petal.classList.add('petal'); 
-
-    // Usamos el SVG como imagen de fondo para conservar sus colores originales.
-    petal.style.backgroundImage = 'url(images/petalo.svg)';
+    
+    // Se usa el nuevo archivo SVG como fondo del pétalo.
+    petal.style.backgroundImage = 'url(images/petalo1.png)';
     petal.style.backgroundSize = 'contain';
     petal.style.backgroundRepeat = 'no-repeat';
     petal.style.backgroundPosition = 'center';
@@ -38,8 +41,7 @@ function createPetal() {
     petal.addEventListener('animationend', () => {
         petal.remove();
     });
+    
 }
 
-// Generamos nuevos pétalos periódicamente para un efecto más denso
-// Aumentamos el intervalo para que caigan menos pétalos (antes 400ms).
 setInterval(createPetal, 800);

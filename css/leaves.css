@@ -7,12 +7,12 @@
     /* Un z-index muy alto para asegurar que esté por encima de todo, incluida la barra de navegación. */
     z-index: 9999;
     pointer-events: none; /* Evita que los pétalos bloqueen los clics en la página */
-    
+
     /* Optimización: le decimos al navegador qué propiedades vamos a animar */
     will-change: top, transform;
 
     /* Las siguientes propiedades son aplicadas por leaves.js: */
-    /* - width, height, background-color, mask-image, animation */
+    /* - width, height, animation */
 }
 
 /* Animación para la caída vertical (usando la propiedad 'top') */
